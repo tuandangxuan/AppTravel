@@ -23,13 +23,21 @@ const styles=StyleSheet.create({
     },
     home_Tours:{
         marginTop: 20,
+        height:400
     },
     home_Tour :{
         flexDirection:'row',
-        alignItems:'center',
-        justifyContent: 'center',
-        height:120
+        borderBottomWidth:1,
+        height:140
         
+    },
+    home_ImageTuor:{
+        width:120,
+        height:120, 
+        borderRadius: 10,
+    },
+    home_FontSizeMoTa:{
+        fontSize:12,
     }
 
 

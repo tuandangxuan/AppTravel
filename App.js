@@ -7,6 +7,10 @@ import Login from './component/Login';
 import Home from './component/Home';
 import Profile from './component/Profile';
 import About from './component/About';
+import MyTour from './component/MyTour';
+import DetailTour from './component/DetailTuor';
+
+
 import { Image } from 'react-native';
 
 const stack= createNativeStackNavigator();
@@ -25,6 +29,14 @@ const TabMenu = () => {
         }}
       />
       <Tab.Screen name='Giới thiệu' component={About}
+        options={{
+          tabBarIcon: () => (
+            <Image style={{ width: 25, height: 25 }} source={require('./component/image/about.png')} resizeMode="stretch" />
+
+          )
+        }}
+      />
+      <Tab.Screen name='Tour của tôi' component={MyTour}
         options={{
           tabBarIcon: () => (
             <Image style={{ width: 30, height: 30 }} source={require('./component/image/shopping.png')} resizeMode="stretch" />
@@ -55,7 +67,9 @@ export default function App() {
             <stack.Screen name='DangNhap' component={Login} options={ {title:'Đăng Nhập'}} />
             <stack.Screen name='Trangchu' component={Home} options={ {title:''}} />
             <stack.Screen name='GioiThieu' component={About} options={ {title:''}} />
-            <stack.Screen name='ThongTin' component={Profile} options={ {title:'Đăng Nhập'}} />
+            <stack.Screen name='TourCuaToi' component={MyTour} options={ {title:''}} />
+            <stack.Screen name='ChiTietTour' component={DetailTour} options={ {title:''}} />
+            <stack.Screen name='ThongTin' component={Profile} options={ {title:''}} />
             <stack.Screen name='TabMenu' component={TabMenu} />
 
 

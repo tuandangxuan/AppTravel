@@ -18,11 +18,9 @@
             "title": "Phú Quốc 2 ngày 1 đêm",
             "limit":20,
             "member":5,
-            "description":[
-                "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái" ,
-                "Phòng khách sạn 5 sao",
-                "Tắm bể bơi lộ thiên"
-            ],
+            "description":
+                "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái Phòng khách sạn 5 saoTắm bể bơi lộ thiên"
+            ,
             "imageIfo":"",
             "price":"2000$",
             "dealine":"22/07/2023"
@@ -31,18 +29,56 @@
 
         {
             "id":2,
-            "title": "Phú Quốc 2 ngày 1 đêm",
+            "title": "Cát Bà 3 ngày",
             "limit":22,
             "member":0,
-            "description":[
-                "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái" ,
-                "Phòng khách sạn 5 sao",
-                "Tắm bể bơi lộ thiên"
-            ],
+            "description":
+            "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái Phòng khách sạn 5 saoTắm bể bơi lộ thiên"
+        ,
+            "imageIfo":"",
+            "price":"2000$",
+            "dealine":"22/07/2023"
+            
+        },
+        {
+            "id":3,
+            "title": "Cát Bà 3 ngày",
+            "limit":22,
+            "member":0,
+            "description":
+            "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái Phòng khách sạn 5 saoTắm bể bơi lộ thiên"
+        ,
+            "imageIfo":"",
+            "price":"2000$",
+            "dealine":"22/07/2023"
+            
+        },
+        {
+            "id":4,
+            "title": "Cát Bà 3 ngày",
+            "limit":22,
+            "member":0,
+            "description":
+            "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái Phòng khách sạn 5 saoTắm bể bơi lộ thiên"
+        ,
+            "imageIfo":"",
+            "price":"2000$",
+            "dealine":"22/07/2023"
+            
+        },
+        {
+            "id":5,
+            "title": "Cát Bà 3 ngày",
+            "limit":22,
+            "member":0,
+            "description":
+            "Ăn 3 phát, ngủ 5 tiếng, chơi thoải mái Phòng khách sạn 5 saoTắm bể bơi lộ thiên"
+        ,
             "imageIfo":"",
             "price":"2000$",
             "dealine":"22/07/2023"
             
         }
+        
     ]
 }
