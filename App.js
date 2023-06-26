@@ -9,6 +9,7 @@ import Profile from './component/Profile';
 import About from './component/About';
 import MyTour from './component/MyTour';
 import DetailTour from './component/DetailTuor';
+import ChangePass from './component/ChangePass';
 
 
 import { Image } from 'react-native';
@@ -71,6 +72,7 @@ export default function App() {
             <stack.Screen name='ChiTietTour' component={DetailTour} options={ {title:''}} />
             <stack.Screen name='ThongTin' component={Profile} options={ {title:''}} />
             <stack.Screen name='TabMenu' component={TabMenu} />
+            <stack.Screen name='Doimatkhau' component={ChangePass} />
 
 
             
