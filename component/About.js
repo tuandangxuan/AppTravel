@@ -1,4 +1,4 @@
-import { View , Text, Linking, TouchableOpacity, Image, ScrollView} from "react-native";
+import { View , Text} from "react-native";
 
 
 
@@ -16,26 +16,8 @@ const About =()=>{
       };
     
     return(
-        <View style={{flex:1, marginTop:30, padding:10}}>
-            <View style={{justifyContent:'center', alignItems:'center', width:'100%'}}>
-                <Text style={{fontStyle:'italic', fontSize:25, fontWeight:'bold', color:'#6633FF', }} >Giới thiệu</Text>
-            </View>
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                >
-                {arr.map((item, index) => (
-                    <View style={{marginTop: 20, paddingBottom:20}}>
-                    
-                    <TouchableOpacity key={index} onPress={() => handleImagePress(item.link)}>
-                    <Image source={{ uri: item.image }} style={{width:'100%', height:400}} />
-                    <View style={{justifyContent:'center', alignItems:'center', width:'100%'}}>
-                        <Text style={{fontStyle:'italic', fontSize:15, fontWeight:'bold', color:'#FF6600',textDecorationLine:'underline', marginTop:10}} >{item.title}</Text>
-                    </View>
-                    </TouchableOpacity>
-                </View>
-                ))}
-            </ScrollView>
-            
+        <View>
+            <Text>Giới thiệu</Text>
         </View>
     )
 }

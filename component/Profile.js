@@ -27,7 +27,7 @@ const Profile = (props) => {
       <TouchableOpacity style={styles.Profile_button} onPress={() => props.navigation.navigate('Login')}>
         <Text style={styles.Profile_buttonText}>Đăng xuất</Text>
       </TouchableOpacity>
-
+ 
     </View>
   );
 };
