@@ -1,4 +1,4 @@
-import { View , Text, TextInput, Image, ScrollView,FlatList, RefreshControl,ActivityIndicator, } from "react-native";
+import { View , Text, TextInput, Image, ScrollView,FlatList, RefreshControl,ActivityIndicator, TouchableOpacity, } from "react-native";
 import { useState, useEffect } from "react";
 
 import SlideShow from "./open/SlideShow";
@@ -49,9 +49,9 @@ const Home =(props)=>{
 
     const renderTour=({item})=>{
       return(
-        
-          <View style={styles.home_Tour}>
-              <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}} onPressIn >
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('ChiTietTour')}}>
+          <View style={styles.home_Tour} >
+              <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}}  >
                 <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>
               </View>
               <View style={{width:'60%', padding:5}}>
@@ -68,6 +68,7 @@ const Home =(props)=>{
                 <Text style={{marginLeft: 3,fontSize: 12,}} numberOfLines={4} >{item.description}</Text>
               </View>
           </View>
+          </TouchableOpacity>
              
       )
     };
