@@ -13,6 +13,7 @@ import ChangePass from './component/ChangePass';
 
 
 import { Image } from 'react-native';
+import SignUp from './component/SignUp';
 
 const stack= createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -73,6 +74,7 @@ export default function App() {
             <stack.Screen name='ThongTin' component={Profile} options={ {title:''}} />
             <stack.Screen name='TabMenu' component={TabMenu} />
             <stack.Screen name='Doimatkhau' component={ChangePass} />
+            <stack.Screen name='DangKi' component={SignUp} />
 
 
             
