@@ -1,11 +1,12 @@
 import { View , Text} from "react-native";
+import ReactPlayer from 'react-player';
 
 
 
 const About =()=>{
     return(
-        <View>
-            <Text>Giới thiệu</Text>
+        <View style={{flex:1, marginTop:20, backgroundColor:'blue'}}>
+           
         </View>
     )
 }

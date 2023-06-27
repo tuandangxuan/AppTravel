@@ -24,7 +24,7 @@ const Profile = ({navigation}) => {
       <TouchableOpacity style={styles.Profile_button} onPress={() => navigation.navigate('DangNhap')}>
         <Text style={styles.Profile_buttonText}>Đăng xuất</Text>
       </TouchableOpacity>
-
+ 
     </View>
   );
 };
