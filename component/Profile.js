@@ -13,7 +13,7 @@ const Profile = ({navigation}) => {
         />
       </View>
       <TouchableOpacity style={styles.Profile_button}>
-        <Text style={styles.buttonText}>Thông tin cá nhân</Text>
+        <Text style={styles.Profile_buttonText}>Thông tin cá nhân</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.Profile_button}>
         <Text style={styles.Profile_buttonText}>Edit Profile</Text>
