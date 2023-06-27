@@ -2,7 +2,7 @@ import { View, Text, TextInput, Image } from "react-native";
 import styles from "./styles";
 import { TouchableOpacity } from "react-native";
 import { useState } from "react";
-import { Button } from "react-native";
+
 
 const ChangePass = ({navigation}) => {
   const [getPasswordVisible, setPasswordVisible] = useState(false);
@@ -75,9 +75,14 @@ const ChangePass = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity style={styles.ChangePass_bottom} onPress={()=>navigation.navigate('ThongTin')} >
-        <Text style={{fontWeight: "bold",fontSize: 20,}}>Xác nhận</Text>
+      <View style={{flexDirection: 'row'}}>
+      <TouchableOpacity style={styles.ChangePass_bottom} onPress={()=>navigation.navigate('DangNhap')} >
+        <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Xác nhận</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.ChangePass_cancel} onPress={()=>navigation.navigate('DangNhap')} >
+        <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Cancel</Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
 };

@@ -1,4 +1,4 @@
-import { View , Text, TextInput, Image, ScrollView,FlatList, RefreshControl,ActivityIndicator, } from "react-native";
+import { View , Text, TextInput, Image, ScrollView,FlatList, RefreshControl,ActivityIndicator, TouchableOpacity, } from "react-native";
 import { useState, useEffect } from "react";
 
 import SlideShow from "./open/SlideShow";
@@ -52,7 +52,7 @@ const Home =(props)=>{
         
           <View style={styles.home_Tour}>
               <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}} onPressIn >
-                <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>
+                <Image source={{uri: 'https://tophinhanhdep.com/wp-content/uploads/2021/10/720x1480-Wallpapers.jpg'}} style={styles.home_ImageTuor}/>
               </View>
               <View style={{width:'60%', padding:5}}>
                 <View style={{justifyContent: 'center', alignItems:'center', width:'100%'}} >
@@ -68,6 +68,7 @@ const Home =(props)=>{
                 <Text style={{marginLeft: 3,fontSize: 12,}} numberOfLines={4} >{item.description}</Text>
               </View>
           </View>
+          </TouchableOpacity>
              
       )
     };
