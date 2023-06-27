@@ -31,7 +31,7 @@ const Home =(props)=>{
       };
 
       const getListTour=async()=>{
-        let api_url ="http://192.168.31.108:3000/tours"
+        let api_url ="https://xuantuan06.000webhostapp.com/php/GetTourFromApi.php"
   
   
         try {
@@ -52,15 +52,15 @@ const Home =(props)=>{
         
           <View style={styles.home_Tour}>
               <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}} onPressIn >
-                <Image source={{uri: 'https://tophinhanhdep.com/wp-content/uploads/2021/10/720x1480-Wallpapers.jpg'}} style={styles.home_ImageTuor}/>
+                <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>
               </View>
               <View style={{width:'60%', padding:5}}>
                 <View style={{justifyContent: 'center', alignItems:'center', width:'100%'}} >
                   <BlinkingText text ={item.title} interval={1000}/>
                 </View>
                 <View style={{flexDirection:'row'}}>
-                  <Text style={{fontSize:12, width:'50%'}} >Số lượng {item.member}/{item.limit}</Text>
-                  <Text style={{fontSize:12,fontStyle:'italic' }}>Hạn: {item.dealine}</Text>
+                  <Text style={{fontSize:12, width:'50%'}} >Số lượng {item.member}/{item.maximum}</Text>
+                  <Text style={{fontSize:12,fontStyle:'italic' }}>Hạn: {item.lastdate}</Text>
                 </View>
                 
                 <Text>Chi phí : {item.price}</Text>
