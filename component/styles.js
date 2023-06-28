@@ -129,6 +129,15 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     alignItems: "center",
   },
+  My_Tours: {
+    marginTop: 50,
+    height: '100%',
+  },
+  MyTours_title:{
+    paddingHorizontal: 20,
+    marginBottom: 10,
+    alignItems: 'center',
+  },
 });
 
 export default styles;
