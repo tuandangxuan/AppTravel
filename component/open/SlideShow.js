@@ -12,7 +12,7 @@ const SlideShow = () => {
   
     
     const [data, setData] = useState([]);
-
+    const slides = [];
   useEffect(() => {
     let api_url ="https://xuantuan06.000webhostapp.com/php/GetSlide.php"
     fetch(api_url).then(response => response.json())
@@ -20,16 +20,17 @@ const SlideShow = () => {
     .catch(error => {
       console.error(error);
     })}, []);
-    
+    console.log(data);
    
 
   return (
-    <Swiper loop={true} autoplay={true}>
+    <Swiper >
       {data.map((item, index) => (
         <View key={index}>
           <Image source={{uri: item.image}} style={{ width: '100%', height: 200, borderRadius:10 }} />
         </View>
       ))}
+      {/* {slides} */}
     </Swiper>
   );
       };
