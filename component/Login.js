@@ -10,6 +10,8 @@ import {
   SafeAreaView,
 } from "react-native";
 import React, { useState } from "react";
+import axios from 'axios';
+
 
 const Login = ({ navigation }) => {
   const [phone, setphone] = useState("");
@@ -18,43 +20,38 @@ const Login = ({ navigation }) => {
 
   const doLogin = () => {
     //check
-    // if (phone.length == 0) {
-    //   alert("chua nhap username");
-    //   return;
-    // }
-    // if (password.length == 0) {
-    //   alert("chua nhap password");
-    //   return;
-    // }
+    if (phone.length == 0) {
+      alert("chua nhap Số điện thoại");
+      return;
+    }
+    if (password.length == 0) {
+      alert("chua nhap password");
+      return;
+    }
+    const data ={
+      phone:phone,
+      passw:password
+    }
+    axios.post('https://xuantuan06.000webhostapp.com/php/Login.php', data)
+    .then(response => {
+    if (response.data.success) {
+      //Đăng nhập thành công
+      navigation.navigate('TabMenu', {phoneFromLogin : phone });
+      alert("Xin chào bạn");
+      console.log(response.data.message);
+    } else {
+      // Xử lý khi  thất bại
+      console.log(response.data.message);
+      alert(response.data.message);
+      
+    }
+  })
+  .catch(error => {
+    // Xử lý khi có lỗi xảy ra
+    console.log(error);
+  });
 
-    // //lay data
-
-    // let url_login = 'http://192.168.1.22:3000/user?username=' + username;
-
-    // fetch(url_login)
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then(async (res_json) => {
-    //     if (res_json.length != 1) {
-    //       alert("nhap lai username");
-    //       return;
-    //     }
-    //     let objU = res_json[0];
-    //     if (objU.password != password) {
-    //       alert("nhap lai password");
-    //       return;
-    //     }
-
-    //     try {
-    //       await AsyncStorage.setItem('loginInfo', JSON.stringify(objU));
-    //       navigation.navigate('TabMenu')
-    //     } catch (e) {
-    //       // saving error
-    //       console.log(e);
-    //     }
-    //   })
-    navigation.navigate("TabMenu");
+    
   };
   return (
     <ImageBackground

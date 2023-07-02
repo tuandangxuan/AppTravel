@@ -76,10 +76,10 @@ const ChangePass = ({navigation}) => {
         </View>
       </View>
       <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity style={styles.ChangePass_bottom} onPress={()=>navigation.navigate('DangNhap')} >
+      <TouchableOpacity style={styles.ChangePass_bottom} onPress={()=>navigation.navigate('Login')} >
         <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Xác nhận</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ChangePass_cancel} onPress={()=>navigation.navigate('DangNhap')} >
+      <TouchableOpacity style={styles.ChangePass_cancel} onPress={()=>navigation.navigate('SignUp')} >
         <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Cancel</Text>
       </TouchableOpacity>
       </View>
