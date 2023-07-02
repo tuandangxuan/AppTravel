@@ -129,18 +129,6 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     alignItems: "center",
   },
-  detail_ImageTuor:{
-    width:'100%',
-    height:200
-  },
-  detailTour_btnThamgia:{
-    backgroundColor: '#00DD00',
-    width:100,
-    justifyContent: 'center',
-    alignItems:'center',
-    borderRadius:10,
-    height:30
-  },
 });
 
 export default styles;
