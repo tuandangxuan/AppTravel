@@ -49,7 +49,7 @@ const Home =(props)=>{
 
     const renderTour=({item})=>{
       return(
-        <TouchableOpacity onPress={()=>{props.navigation.navigate('ChiTietTour')}}>
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('DetailTour', {idTourFromHome : item.id})}}>
           <View style={styles.home_Tour} >
               <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}}  >
                 <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>
@@ -59,7 +59,7 @@ const Home =(props)=>{
                   <BlinkingText text ={item.title} interval={1000}/>
                 </View>
                 <View style={{flexDirection:'row'}}>
-                  <Text style={{fontSize:12, width:'50%'}} >Số lượng {item.member}/{item.maximum}</Text>
+                  <Text style={{fontSize:12, width:'50%'}}>Số lượng {item.members}</Text>
                   <Text style={{fontSize:12,fontStyle:'italic' }}>Hạn: {item.lastdate}</Text>
                 </View>
                 

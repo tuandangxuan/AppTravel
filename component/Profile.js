@@ -3,7 +3,10 @@ import styles from "./styles";
 import { TouchableOpacity } from "react-native";
 
 
-const Profile = ({navigation}) => {
+const Profile = (props) => {
+  const phoneFromLogin = props.route.params.phoneFromLogin;
+  console.log("Profile : "+ phoneFromLogin);
+
   return (
     <View style= {{flex: 1 , flexDirection:'column', top: 150 }}>
      <View style={{ alignItems: 'center', justifyContent: "center"}}>
@@ -18,10 +21,10 @@ const Profile = ({navigation}) => {
       <TouchableOpacity style={styles.Profile_button}>
         <Text style={styles.Profile_buttonText}>Edit Profile</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Profile_button} onPress={()=> navigation.navigate('Doimatkhau')}>
+      <TouchableOpacity style={styles.Profile_button} onPress={()=> props.navigation.navigate('ChangePass')}>
         <Text style={styles.Profile_buttonText}>Đổi mật khẩu</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Profile_button} onPress={() => navigation.navigate('DangNhap')}>
+      <TouchableOpacity style={styles.Profile_button} onPress={() => props.navigation.navigate('Login')}>
         <Text style={styles.Profile_buttonText}>Đăng xuất</Text>
       </TouchableOpacity>
 

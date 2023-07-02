@@ -24,7 +24,7 @@ const BlinkingText = (props) => {
   }, [opacityValue, props.interval]);
 
   return (
-    <Animated.Text style={{ opacity: opacityValue , fontWeight:'bold', color:'#008080'}}>
+    <Animated.Text style={{ opacity: opacityValue , fontWeight:'bold', color:'#0099CC'}}>
       {props.text}
     </Animated.Text>
   );
