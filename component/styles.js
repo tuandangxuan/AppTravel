@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     margin: 10,
     marginBottom: 10,
     fontSize: 20,
+    fontStyle:'italic',
+     fontWeight:'bold',
+      color:'#6633FF', 
   },
   home_Search: {
     flexDirection: "row",
@@ -139,7 +142,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems:'center',
     borderRadius:10,
-    height:30
+    height:50
+  },
+  myTour_Tours: {
+    marginTop: 20,
+    height: 640,
   },
 });
 

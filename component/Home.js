@@ -4,16 +4,21 @@ import { useState, useEffect } from "react";
 import SlideShow from "./open/SlideShow";
 import styles from "./styles";
 import BlinkingText from "./open/BlinkingText";
-import Decription from "./open/Description";
+
 
 
 
 
 
 const Home =(props)=>{
+  const phoneFromLogin = props.route.params.phoneFromLogin;
+  console.log("Home : "+ phoneFromLogin);
     const [greeting, setGreeting] = useState("");
     const [listTour, setlistTour] = useState([]);
     const [isLoading, setisLoading] = useState(true);
+    const [refreshing, setRefreshing] = useState(false);
+    const [keyWord, setkeyWord] = useState("");
+  
 
 
     const checkHouse = () => {
@@ -29,27 +34,62 @@ const Home =(props)=>{
         }
         setGreeting(message);
       };
+      const search =async()=>{
+        const key = keyWord;
+        console.log(key);
+        if(key!=""){
+          let api_url ="https://xuantuan06.000webhostapp.com/php/SeachTour.php?key="+key;
+          try {
+              const response = await fetch(api_url);// load dữ liệu
+              if (response.ok) {
+                const data = await response.text();
+                if (data === "Không tìm thấy dữ liệu.") {
+                  alert("Hiện tại chưa có tour phù hợp")
+                } else {
+                  const json = JSON.parse(data);
+                  setlistTour(json);
+                }
+              } else {
+                console.error("Lỗi truy vấn API");
+              }
+            } catch (error) {
+              console.error(error);
+            } finally {
+              setisLoading(false);
+            }
+        }else getListTour();
+        
+        
+
+      }
 
       const getListTour=async()=>{
-        let api_url ="https://xuantuan06.000webhostapp.com/php/GetTourFromApi.php"
+        let api_url ="https://xuantuan06.000webhostapp.com/php/GetTourFromApi.php";
   
   
         try {
             const response = await fetch(api_url);// load dữ liệu
-            const json = await response.json();// chuyển dl thành json
-           
-            setlistTour(json)// đổ dl vào state
-  
+            if (response.ok) {
+              const data = await response.text();
+              if (data === "Không tìm thấy dữ liệu.") {
+                console.error(data);
+              } else {
+                const json = JSON.parse(data);
+                setlistTour(json);
+              }
+            } else {
+              console.error("Lỗi truy vấn API");
+            }
           } catch (error) {
             console.error(error);
-          }finally{
-              setisLoading(false);
+          } finally {
+            setisLoading(false);
           }
     };
 
     const renderTour=({item})=>{
       return(
-        <TouchableOpacity onPress={()=>{props.navigation.navigate('DetailTour', {idTourFromHome : item.id})}}>
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('DetailTour', {idTourFromHome : item.id, phoneFromLogin : phoneFromLogin})}}>
           <View style={styles.home_Tour} >
               <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}}  >
                 <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>
@@ -73,12 +113,13 @@ const Home =(props)=>{
       )
     };
 // Thực hiện các tác vụ khi người dùng vuốt từ trên xuống 
-    const handleRefresh = () => {
-      setisLoading(true);
-      console.log("Vuốt trên xuống");
-      getListTour();
-      
-    };
+const handleRefresh = () => {
+  setRefreshing(true); // set trạng thái RefreshControl là true
+  getListTour().then(() => {
+    setRefreshing(false); // set trạng thái RefreshControl là false khi cập nhật thành công
+  });
+  setkeyWord("");
+};
   
 
       useEffect(()=>{
@@ -94,8 +135,16 @@ const Home =(props)=>{
             
             <Text style={styles.home_Greet}>{greeting}</Text>
             <View style={styles.home_Search}>
-                <TextInput style={{width:'90%'}} placeholder="Tìm kiếm"/>
-                <Image source={require("./image/search.png")}/>
+                <TextInput style={{width:'85%'}} placeholder="Tìm kiếm" onChangeText={(txt)=> setkeyWord(txt)} value={keyWord}/>
+                {
+                  keyWord != "" ?
+                  <TouchableOpacity style={{ width:40, height:'90%', justifyContent: 'center', alignItems:'center'}} onPress={search}>
+                    <Image source={require("./image/search.png")} onPress={search}/>
+                  </TouchableOpacity>
+                  :null
+                  
+                }
+                
             </View>
 
             <View style={{height:200}}>
@@ -106,17 +155,18 @@ const Home =(props)=>{
             
             <View style={styles.home_Tours}>
           
-              <ScrollView
-                refreshControl={<RefreshControl
-                refreshing={isLoading}
-                onRefresh={handleRefresh} />}
-                contentContainerStyle={{ flexGrow: 1 }}
-                showsVerticalScrollIndicator={true}
-              >
-                 <FlatList data={listTour}
-                      keyExtractor={(item) => { return item.id }}
-                      renderItem={renderTour} />
-              </ScrollView>
+            <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+          }
+          contentContainerStyle={{ flexGrow: 1 }}
+          showsVerticalScrollIndicator={true}
+        >
+          <FlatList data={listTour}
+            keyExtractor={(item) => { return item.id }}
+            renderItem={renderTour} 
+          />
+        </ScrollView>
 
             </View>
         </View>      

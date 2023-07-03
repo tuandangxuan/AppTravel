@@ -159,7 +159,7 @@ axios.post('https://xuantuan06.000webhostapp.com/php/SignUp.php', data)
       <TouchableOpacity style={styles.ChangePass_bottom} onPress={doSignUp} >
         <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Xác nhận</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ChangePass_cancel} onPress={()=>navigation.navigate('DangNhap')} >
+      <TouchableOpacity style={styles.ChangePass_cancel} onPress={()=>navigation.navigate('Login')} >
         <Text style={{fontWeight: "bold",fontSize: 15,color:'#fff'}}>Cancel</Text>
       </TouchableOpacity>
       </View>

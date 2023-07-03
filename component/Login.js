@@ -37,7 +37,6 @@ const Login = ({ navigation }) => {
     if (response.data.success) {
       //Đăng nhập thành công
       navigation.navigate('TabMenu', {phoneFromLogin : phone });
-      alert("Xin chào bạn");
       console.log(response.data.message);
     } else {
       // Xử lý khi  thất bại
@@ -123,7 +122,7 @@ const Login = ({ navigation }) => {
               <Text
                 style={styles.singup}
                 onPress={() => {
-                  navigation.navigate("DangKi");
+                  navigation.navigate("SignUp");
                 }}
               >
                 Đăng Ký
