@@ -24,7 +24,7 @@ const TabMenu = (props) => {
   return (
     
     <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-      <Tab.Screen name='Trang chủ' component={Home}
+      <Tab.Screen name='Trang chủ' component={Home} initialParams={{phoneFromLogin:phoneFromLogin}}
         options={{
           tabBarIcon: () => (
             <Image style={{ width: 30, height: 30 }} source={require('./component/image/homeicon.png')} resizeMode="stretch" />
@@ -40,7 +40,7 @@ const TabMenu = (props) => {
           )
         }}
       />
-      <Tab.Screen name='Tour của tôi' component={MyTour}
+      <Tab.Screen name='Tour của tôi' component={MyTour} initialParams={{phoneFromLogin:phoneFromLogin}}
         options={{
           tabBarIcon: () => (
             <Image style={{ width: 30, height: 30 }} source={require('./component/image/shopping.png')} resizeMode="stretch" />

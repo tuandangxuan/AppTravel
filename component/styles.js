@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     margin: 10,
     marginBottom: 10,
     fontSize: 20,
+    fontStyle:'italic',
+     fontWeight:'bold',
+      color:'#6633FF', 
   },
   home_Search: {
     flexDirection: "row",
@@ -128,6 +131,18 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     paddingTop: 30,
     alignItems: "center",
+  },
+  detail_ImageTuor:{
+    width:'100%',
+    height:200
+  },
+  detailTour_btnThamgia:{
+    backgroundColor: '#00DD00',
+    width:100,
+    justifyContent: 'center',
+    alignItems:'center',
+    borderRadius:10,
+    height:30
   },
 });
 

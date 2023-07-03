@@ -14,7 +14,7 @@ const SlideShow = () => {
     const [data, setData] = useState([]);
     const slides = [];
   useEffect(() => {
-    let api_url ="https://xuantuan06.000webhostapp.com/php/GetTourFromApi.php"
+    let api_url ="https://xuantuan06.000webhostapp.com/php/GetSlide.php"
     fetch(api_url).then(response => response.json())
     .then(data => setData(data))
     .catch(error => {
