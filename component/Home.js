@@ -59,7 +59,7 @@ const Home =(props)=>{
 
     const renderTour=({item})=>{
       return(
-        <TouchableOpacity onPress={()=>{props.navigation.navigate('ChiTietTour')}}>
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('DetailTour', {idTourFromHome : item.id, phoneFromLogin : phoneFromLogin})}}>
           <View style={styles.home_Tour} >
               <View style={{width:'40%',justifyContent:'center', alignItems:'center', padding:3}}  >
                 <Image source={ {uri: item.image}} style={styles.home_ImageTuor}/>

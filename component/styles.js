@@ -132,6 +132,22 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     alignItems: "center",
   },
+  detail_ImageTuor:{
+    width:'100%',
+    height:200
+  },
+  detailTour_btnThamgia:{
+    backgroundColor: '#00DD00',
+    width:100,
+    justifyContent: 'center',
+    alignItems:'center',
+    borderRadius:10,
+    height:50
+  },
+  myTour_Tours: {
+    marginTop: 20,
+    height: 640,
+  },
 });
 
 export default styles;
